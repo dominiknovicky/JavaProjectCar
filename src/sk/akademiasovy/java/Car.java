@@ -1,5 +1,6 @@
 package sk.akademiasovy.java;
 
+import java.util.Date;
 import java.util.Random;
 
 public class Car {
@@ -9,6 +10,10 @@ public class Car {
     private float fuelConsuptiom;
     private boolean frontWiper;
     private String plate;
+    private boolean lights;
+    private int doors;
+    private String color;
+
 
     // constructor
     public Car(){
@@ -17,6 +22,7 @@ public class Car {
         fuelConsuptiom = 7.9f;
         frontWiper = false;
         generatePlate(null);
+        lights = false;
     }
     public Car(String brand, float fuelConsuptiom, String city){
         speed = 0;
@@ -24,7 +30,7 @@ public class Car {
         this.fuelConsuptiom = fuelConsuptiom;
         this.brand = brand;
         frontWiper = false;
-        generatePlate(null);
+        generatePlate(city);
     }
 
     public void setBrand(String value) {
@@ -109,4 +115,36 @@ public class Car {
         System.out.println(plate);
     }
 
+    public String getPlate(){
+        return plate;
+    }
+
+
+    public void turnOnLights() {
+        lights = true;
+    }
+
+    public void turnOffLights() {
+        lights = false;
+    }
+
+    public boolean isLights() {
+        return lights;
+    }
+
+    public void setDoors(int doors) {
+        this.doors = doors;
+    }
+
+    public int getDoors() {
+        return doors;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 }
